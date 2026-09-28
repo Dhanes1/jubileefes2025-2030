@@ -301,7 +301,7 @@ input, textarea{
     inset 0 0 4px rgba(0, 0, 0, 0.2);
 
   /* ─── ADD THIS LINE: Makes the expansion look silky smooth ─── */
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
   cursor: pointer;
 }
 
@@ -316,7 +316,7 @@ input, textarea{
 /* This automatically applies to EVERY wooden frame when it gets clicked! */
 .wooden-photo-frame:active {
   /* Scales the clicked frame up smoothly by 2.5x its size */
-  transform: scale(2.5); 
+  transform: scale(3); 
   
   /* Pushes the frame above neighboring items while it is enlarged */
   position: relative;
@@ -333,4 +333,20 @@ input, textarea{
   border-width: 6px; 
   padding: 10px;
 }
+.download-btn {
+  background-color: #4a2f13; /* Matches your wooden frame theme */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-family: sans-serif;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.2s ease;
+  width: 90%; /* Keeps button nicely proportioned under the frame */
+}
 
+.download-btn:hover {
+  background-color: #2b1a0a; /* Darkens slightly when hovered */
+}
