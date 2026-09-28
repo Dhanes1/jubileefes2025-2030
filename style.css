@@ -1,0 +1,273 @@
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:#f1f5f9;
+}
+
+.sidebar {
+    width: 100%;           /* Full width instead of 200px */
+    height: 77px;          /* Height adjusts to content */
+    position: fixed;
+    top: 0;                /* Stick to the top */
+    left: 0;
+    background: #3e0080;
+    color: white;
+    padding: 10px 20px;    /* Reduced vertical padding */
+    display: flex;         /* Use flex to align items horizontally */
+    align-items: center;   /* Center items vertically */
+    z-index: 1000;         /* Keep it above content */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, height 0.3s ease;
+}
+
+.sidebar img{
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, height 0.3s ease;
+}
+
+.sidebar h2{
+    font-weight:500;
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.sidebar a {
+  	display: inline-block; 
+ 	margin: 0 15px;
+    padding:10px;
+    color:#cbd5e1;
+    border-radius:8px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, padding 0.3s ease, margin 0.3s ease;
+}
+
+.sidebar a:hover{
+    background:#334155;
+    color:white;
+    transform:scale(1.05)
+}
+
+.sidebar:hover{
+    background:#173054;
+    color:white;
+}
+
+.content {
+  	margin-left: 0;        /* Remove the 220px margin */
+  	margin-top: 80px;      /* Add space for the top bar (adjust based on bar height) */
+  	padding: 30px;
+    transition: margin-top 0.3s ease;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom:15px;
+    font-size: 1em;
+    width: 95%;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, font-size 0.3s ease-in-out, padding 0.3s ease, margin-bottom 0.3s ease; /* Smooth transition for transform and color */
+}
+
+.card:hover{
+    background:#ededed;
+    color:black;
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+    transform: scale(0.99);
+}
+
+button{
+    padding:8px 14px;
+    background:#3b82f6;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2563eb;
+}
+
+input, textarea{
+    width:100%;
+    padding:8px;
+    margin:8px 0;
+    border:1px solid #cbd5e1;
+    border-radius:12px;
+}
+
+.pop-button {
+    padding: 0.5em 0.5em; /* Add some padding for size */
+    background-color: #007bff; /* Initial background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to a pointer hand */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for transform and color */
+}
+
+.pop-button:hover {
+    transform: scale(1.1); /* Increases the button size by 10% on hover */
+    background-color: #0056b3; /* Change color on hover for better feedback */
+}
+
+.pop-up {
+    padding: 0.5em 0.5em; /* Add some padding for size */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to a pointer hand */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for transform and color */
+	width: auto;
+}
+
+.pop-up:hover {
+  transform: scale(1.1); /* Increases the button size by 10% on hover */
+  background-color: #0056b3; /* Change color on hover for better feedback */
+}
+
+/* Ensure the dropdown container stays in line with other links */
+.dropdown {
+    display: inline-block;
+    position: relative; /* Crucial for positioning the sub-menu */
+   	transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hide the dropdown menu by default */
+.dropdown-content {
+    position: absolute;
+    background-color: #3e0080; /* Match your sidebar color */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 9999;
+    border-radius: 8px;
+    top: 100%; /* Sits right below the trigger */
+    left: 0;
+    max-height: 0px;
+ 	opacity: 0; /* Start invisible */
+	transition: max-height 0.8s ease, opacity 0.3s ease; /* Animate both */
+    overflow: hidden;
+    top: 100%;
+    width: 110px; /* Let it size to its content */
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+    color: #cbd5e1;
+    padding: 12px 16px;
+    text-decoration: none;
+    margin: 0; /* Reset margins for vertical list */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    display: block;
+}
+
+/* Change link color on hover inside dropdown */
+.dropdown-content a:hover {
+    background-color: #334155;
+    color: white;
+}
+
+/* THE MAGIC: Show the menu when hovering over the parent .dropdown */
+.dropdown:hover .dropdown-content {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.circle-img {
+  width: 50px;           /* Set width */
+  height: 50px;          /* Set height (same as width for perfect circle) */
+  border-radius: 50%;     /* Makes the image circular */
+  object-fit: cover;      /* Ensures image fills the circle without distortion */
+  border: 3px solid #333; /* Optional border */
+}
+
+.card a {
+    display: inline-block; 
+    margin: 0 0px;
+    padding:10px;
+    color:#000000;
+    background:#8aa1bd;
+    border-radius:8px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, padding 0.3s ease, margin 0.3s ease;
+}
+
+.card a:hover{
+    background:#334155;
+    color:white;
+    transform:scale(1.05)
+}
+
+
+@media screen and (max-width: 725px) {
+    .sidebar {
+        width: 100%; /* Spans the full width of the phone */
+        height: 40px;
+        float: none;
+        text-align: center;
+    }
+    
+    .sidebar:hover{
+        background:#173054;
+        color:white;
+    }
+    
+    .scroll-area{
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+        overflow-y: visible; /* Try to allow vertical, though browsers often clip this */
+        white-space: nowrap;
+        position: relative; /* Base for dropdowns */
+		padding-bottom: 250px; /* Adjust this number to match the height of your dropdown */
+        margin-bottom: -250px; /* Pulls the page content back up so there is no huge gap */
+        scrollbar-width: none;  /* Hide scrollbar Firefox */
+    }
+    
+    .sidebar::-webkit-scrollbar {
+   	 	display: none;
+	}
+    
+    .sidebar h2 {
+        font-size: 0.8em;
+    }
+    
+    .sidebar a {
+        transform: scale(0.8);
+        padding: 5px;
+        margin: 0 0px;
+	}
+    
+    .sidebar a:hover{
+        transform:scale(0.9);
+	}
+    
+    .sidebar img{
+        transform: scale(0.7);
+    }
+    
+    .card{
+        background:white;
+        padding:13px;
+        border-radius:12px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.08);
+        margin-bottom:15px;
+        font-size: 0.8em;
+        padding: 10px;
+        margin-bottom: 8px;
+        /*transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for transform and color */
+	}
+    
+    .card:hover{
+        background:#ededed;
+        color:black;
+        box-shadow:0 2px 6px rgba(0,0,0,0.08);
+        transform: scale(0.99);
+    }
+    
+    .content {
+        margin-left: 0;        /* Remove the 220px margin */
+        margin-top: 50px;      /* Add space for the top bar (adjust based on bar height) */
+        padding: 30px;
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <link rel="icon" href="image/DhanesIcon.jpg" type="image/svg+xml">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Jubilee FES 7-12 Memories</title>
+    </head>
+    <body>
+        <div class="sidebar">
+            <img src="image/DhanesIcon.jpg" alt="School Icon" height="20" width="20" class="circle-img" style="margin-right: 8px; border: 0px;">
+            <h2>Grade 7-12 Memories</h2>
+            <div class="scroll-area">
+                <div class="dropdown">
+                    <a href="#" class="drop-trigger">Memories</a>
+                    <div class="dropdown-content">
+                        <a href="grade7.html" class="pop-up">Grade 7</a>
+                        <a href="grade8.html" class="pop-up">Grade 8</a>
+                        <a href="grade9.html" class="pop-up">Grade 9</a>
+                        <a href="grade10.html" class="pop-up">Grade 10</a>
+                        <a href="grade11.html" class="pop-up">Grade 11</a>
+                        <a href="grade12.html" class="pop-up">Grade 12</a>
+                    </div>
+                </div>
+                <a href="gdrivedhanes.html" class="pop-up">Google Drive Links</a>
+                <a href="creatordhanes.html" class="pop-up">Creator</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="card">
+                <h2>Welcome!</h2>
+                <p>Hello! This is just a memory recap from a long time ago! This is all the memories in Jubilee FES. Enjoy reading stories and looking picture you guys might already forgot!</p>
+            </div>
+            <div class="card">
+                <h2>Instructions To Start</h2>
+                <p>Click on one of the grades at the top bar to check for stories in the magical 5 years!</p>
+            </div>
+            <div class="card">
+                <h2>About The Creator</h2>
+                <p>Hi I'm Dhanes. I am the one who makes this website possible. I hope you guys enjoy!</p>
+            </div>
+        </div>
+        <script>
+            const scrollArea = document.getElementById('sidebarLinks');
+
+            scrollArea.addEventListener('wheel', (evt) => {
+                evt.preventDefault();
+                // Adjust the number (e.g., 2) to make it scroll faster or slower
+                scrollArea.scrollLeft += evt.deltaY;
+            }, { passive: false });
+        </script>
+    </body>
+</html>
