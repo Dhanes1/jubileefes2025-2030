@@ -283,10 +283,23 @@ input, textarea{
 }
 
 /* Your exact custom wooden frame base styles */
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 20%;
+  width: 100%;
+}
+
+.gallery-item.frame-large {
+  max-width: 45%;
+}
+
 .wooden-photo-frame {
   display: inline-block;
   line-height: 0;
-  max-width: 20%; /* All frames start small at 20% size */
+  max-width: 100%; /* All frames start small at 20% size */
   width: 100%;       
 
   background-color: #fff; 
@@ -316,7 +329,7 @@ input, textarea{
 /* This automatically applies to EVERY wooden frame when it gets clicked! */
 .wooden-photo-frame:active {
   /* Scales the clicked frame up smoothly by 2.5x its size */
-  transform: scale(3); 
+  transform: scale(2.5); 
   
   /* Pushes the frame above neighboring items while it is enlarged */
   position: relative;
@@ -329,7 +342,7 @@ input, textarea{
 /* ─── THE OVERRIDE RULE ─── */
 /* This specifically catches the frame with both classes and bumps up its size */
 .wooden-photo-frame.frame-large {
-  max-width: 45%; 
+  max-width: 35%; 
   border-width: 6px; 
   padding: 10px;
 }
